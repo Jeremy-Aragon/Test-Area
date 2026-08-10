@@ -2,7 +2,7 @@
 const SUPABASE_URL = "https://vbdbgqcufibzhrucdhfg.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_MTeu6MK8m2y9u53sPx-hxQ_rNIoXDg3";
 
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 const statusDot = document.getElementById("statusDot");
 const statusText = document.getElementById("statusText");
@@ -44,7 +44,7 @@ function escapeHtml(str) {
 }
 
 async function loadMessages() {
-  const { data, error } = await supabase
+  const { data, error } = await supabaseClient
     .from("messages")
     .select("*")
     .order("created_at", { ascending: false });
@@ -69,7 +69,7 @@ form.addEventListener("submit", async (e) => {
   submitBtn.disabled = true;
   submitBtn.textContent = "Posting...";
 
-  const { error } = await supabase.from("messages").insert({ name, message });
+  const { error } = await supabaseClient.from("messages").insert({ name, message });
 
   submitBtn.disabled = false;
   submitBtn.textContent = "Post message";
