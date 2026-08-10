@@ -1,6 +1,6 @@
 // Replace these with your own project's values (Project Settings > API)
-const SUPABASE_URL = "vbdbgqcufibzhrucdhfg";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZiZGJncWN1ZmliemhydWNkaGZnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYzNDkxMDgsImV4cCI6MjEwMTkyNTEwOH0.99fcMdC0ZqtGkS1tXFByKA92zLUFIm00Xdarz3vN0j0";
+const SUPABASE_URL = "https://vbdbgqcufibzhrucdhfg.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_MTeu6MK8m2y9u53sPx-hxQ_rNIoXDg3";
 
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
