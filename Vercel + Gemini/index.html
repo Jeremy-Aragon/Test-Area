@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vercel + Gemini Test</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main>
+  <h1>Vercel + Gemini test</h1>
+  <div class="status"><span class="dot" id="statusDot"></span><span id="statusText">Ready</span></div>
+
+  <div id="chatLog">
+    <div class="empty">Ask Gemini something to get started.</div>
+  </div>
+
+  <form id="chatForm">
+    <textarea id="messageInput" placeholder="Type a message..." required></textarea>
+    <button type="submit" id="sendBtn">Send</button>
+  </form>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
