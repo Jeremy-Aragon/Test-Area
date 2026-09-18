@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signing you in…</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <p class="checking">Signing you in…</p>
+
+  <script src="supabase-client.js"></script>
+  <script>
+    // supabase-js automatically parses the access token from the URL
+    // (detectSessionInUrl defaults to true), so we just wait for the
+    // session to be ready, then move to the homepage.
+    supabaseClient.auth.onAuthStateChange((event, session) => {
+      if (session) {
+        window.location.href = 'index.html';
+      }
+    });
+
+    // Fallback in case the event already fired before this listener attached
+    supabaseClient.auth.getSession().then(({ data: { session } }) => {
+      if (session) {
+        window.location.href = 'index.html';
+      }
+    });
+  </script>
+</body>
+</html>
